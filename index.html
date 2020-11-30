@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checklist</title>
+	<meta charset="utf-8">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</head>
+<body>
+
+	<div class="list">
+
+		<button class="alterar">
+			<div class="box">
+				<span></span> 
+				<h4>Deletar Tudo</h4>
+			</div>
+		</button>
+		<button class="criar">
+			<div class="box">
+				<span></span> 
+				<h4>Nova Tarefa</h4>
+			</div>
+		</button>
+
+		<h2 class="titulo">Lista de Tarefas com JS</h2>
+		<label class="cabecalho">
+			<div class="mudartitulo">
+				<input type="text" name="mudarTitulo">
+			</div>
+		</label>
+
+			<label class="nova">
+				<input type="text" name="tarefa" placeholder="Digite sua Tarefa">
+				<input type="submit" name="adicionar" value="Criar">
+			</label>
+
+		
+	
+		<div id="notas">
+			<div class="lugar">
+				<!-- <div class="loader">Loading...</div> -->
+			</div>
+			<div class="lugarDel">
+				
+			</div>
+		</div>
+
+		<button style="display: none;" id="marcar-notas" onclick="marcarNota()"></button>		
+
+
+	</div>
+
+
+	<div class="dark">
+		<div class="mudarNota">
+			<i class="fa fa-times"></i>
+			<form action="">
+				<div class="label">
+					<input type="text" name="notaName" id="notaName">
+				</div>
+				<input type="submit" value="Mudar nota" posicao="">
+			</form>
+		</div>
+	</div>
+
+
+
+
+	<script src="js/deletar.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/marcar.js"></script>
+
+</body>
+</html>

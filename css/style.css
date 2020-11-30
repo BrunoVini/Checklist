@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    font-family: consolas;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #001925;
+}
+
+#addNota {
+    color: #fff
+}
+
+button {
+    outline: none;
+}
+
+input[type="submit"]{
+    outline: none;
+}
+
+.list {
+    padding: 30px 75px 20px 30px;
+    position: relative;
+    background: #042b3e;
+    border-top: 50px solid #03a9f4;
+    min-width: 500px;
+    min-height: 200px;
+}
+
+.list h2 {
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 0;
+    margin-left: 10px;
+    display: inline-block;
+    border-bottom: 4px solid #fff;
+}
+
+.list .lugar label{
+    position: relative;
+    display: block;
+    margin: 40px 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.list label.cabecalho {
+    margin: 10px 0px;
+    position: relative;
+    top: -40px;
+    font-weight: 900px;
+}
+
+.list input[type="checkbox"] {
+    -webkit-appearance: none;
+}
+
+.list i.primary {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #fff;
+}
+
+.list input[type="checkbox"]:checked ~ i.primary{
+    top: 1;
+    border-top: none;
+    border-right: none;
+    height: 15px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+.list span {
+    position: relative;
+    left: 40px;
+    transform: 0.5s;
+}
+
+.list span:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+.list input[type="checkbox"]:checked ~ span:before {
+    transform: translateY(-50%) scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.list input[type="checkbox"]:checked ~ span {
+    color: #154e6b;
+}
+
+.alterar, .criar {
+    background: #03a9f4;
+    position: absolute;
+    top: -45px;
+    cursor: pointer;
+    font-size: 1.1em;
+    right: 0;
+    margin-right: 10px;
+    border: 1px solid #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #fff;
+    transition: 100ms;
+    padding: 0px;
+}
+
+button.criar {
+    left: 0;
+    margin-left: 10px;
+}
+
+button.criar div, button.alterar div {
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+button.criar div.box span, .icon-fechar span, .alterar span{
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 350ms;
+}
+
+button.criar div h4, .alterar h4{
+    font-weight: lighter;
+    position: relative;
+    z-index: 9;
+}
+
+button.criar div.box:hover span, .icon-fechar:hover span, .alterar:hover span{
+    width: 100%;
+    height: 100%;
+    background: rgb(17, 123, 194);
+    border-radius: 10px;
+}
+
+.icon-fechar {
+    padding: 10px 15px;
+}
+
+.fa-times {
+    z-index: 9;
+    position: relative;
+}
+
+.icon-fechar:hover .fa-times{
+    transition: 350ms;
+    color: #fff;
+}
+
+.icon-fechar:hover span{
+    background-color: #f76b5e;
+    border-radius: 7px;
+}
+
+.alterar1 {
+    display: none;
+    background: #03a9f4;
+    position: relative;
+    top: -45px;
+    font-size: 1.1em;
+    right: 0;
+    margin-right: 10px;
+    border: 1px solid #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: 1s;
+}
+
+label.nova {
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 0;
+    height: 60px;
+    position: relative;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 24px;
+}
+
+.nova input[type="text"] {
+    height: 32px;
+    border: none;
+    background: rgba(0,0,0,0);
+    outline: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-size: 0.6em;
+    width: 60%;
+    margin-left: 10px;
+}
+
+.nova input[type="submit"] {
+    padding: 10px 15px;
+    position: relative;
+    top: 0;
+    left: 20px;
+    border-radius: 10px;
+    color: #fff;
+    background: rgba(0,0,0,0);
+    border: 2px solid #fff;
+    cursor: pointer;
+    font-size: 0.7em;
+}
+.nova input[type="submit"]:hover {
+    background: #fff;
+    color: #042b3e;
+    border-color: #069;
+}
+
+.red {
+    color: #f76b5e;
+}
+
+.changeTitle:hover h4 {
+    color: #fff;
+}
+
+.changeTitle:hover span {
+    background: #13632d;
+}
+
+input[name="mudarTitulo"] {
+    border: none;
+    background: rgba(0,0,0,0);
+    color: #fff;
+    font-weight: 400px;
+    font-size: 30px;
+    margin-left: 10px;
+    display: inline-block;
+    border-bottom: 4px solid #fff;
+    outline: none;
+    width: 100%;
+}
+
+.mudartitulo {
+    display: none;
+    position: relative;
+    z-index: 100;
+    top: 20px;
+}
+
+#notas {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+}
+
+.lugar {
+    margin-left: 10px;
+}
+
+.lugarDel {
+    height: 100%;
+    text-align: center;
+}
+
+i.delete {
+    color: #f54556;
+    font-size: 1.5em;
+    margin: 40px 0;
+    display: block
+}
+
+i.delete:hover {
+    color: #ed342d;
+    cursor: pointer;
+}
+
+.dark {
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.mudarNota {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+    background-color: #fff;
+    height: 200px;
+    width: 350px;
+}
+
+.mudarNota i {
+    color: #6ce76c;
+    margin-left: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.mudarNota form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    height: 90%;
+}
+
+.mudarNota div {
+    position: relative;
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.mudarNota [type="text"] {
+    position: relative;
+    z-index: 10;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    width: 90%;
+    height: 24px;
+    background: transparent;
+    border-bottom: 1px solid #77f35e;
+    color: ;
+}
+
+.mudarNota [type="submit"] {
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    outline: none;
+    width: 90%;
+    background-color: #0d990d;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 600ms;
+}
+
+.mudarNota [type="submit"]:hover {
+    background-color:  #013f04;
+}
