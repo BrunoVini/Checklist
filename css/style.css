@@ -130,6 +130,7 @@ input[type="submit"]{
 button.criar {
     left: 0;
     margin-left: 10px;
+    width: 150px;
 }
 
 button.criar div, button.alterar div {
